@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styletest.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="test-wrapper">
+            <div id="Submit"></div>
+            <div id="result"></div>
+            <script src="script.js"></script>
+            <!-- <form>
+                What color do you prefer?<br>
+                <input type="radio" name="colors" id="red">Red<br>
+                <input type="radio" name="colors" id="blue">Blue
+            </form>
+            <button onclick="check()">Check</button> -->
+            <!-- <button onclick=jecka()>Login</button> -->
+            <button onclick="back()" id="btn-back" style='display: none;'>Back</button>
+            <button onclick="next()" id="btn-next" style='display: none;'>Next</button>
+            <button onclick="next()" id="btn-start" class="btn-start">Start</button>
+            <!-- <button onclick="clears()" id="clears"> Clear Datastore</button>
+            <button onclick="getData()" id="getData">Get</button>    -->
+        </div>
+    </div>
+
+     <!--<p><b>Задание 1</b></p>
+    <div id="question-1">Question 1
+        
+        <br>
+        <input id="answer-0" type="radio" name="first"><label for="answer-0">Answer 1</label><em></em>
+    
+        <br>
+        <input id="answer-1" type="radio" name="first"><label for="answer-1">Answer 2</label><em></em>
+
+        <br>
+        <input id="answer-2" type="radio" name="first"><label for="answer-2">Answer 3</label><em></em>
+    
+    </div> -->
+
+
+    <script>
+        
+        
+        
+        
+        // fetch('/api', options).then(res => {
+        //     console.log(res.json())
+        // })
+
+        async function clears(){
+            const data = {new: '123'};
+            
+            const options = {
+                method:'POST',
+                headers: {
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            
+            await fetch('/api', options);
+        }
+
+
+
+    async function getDatas() {
+        const response = await fetch('/api');
+        const all = await response.json();
+        console.log(all);
+        // getData();
+    }    
+    </script>
+</body>
+
+
+</html>
